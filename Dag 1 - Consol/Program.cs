@@ -1,12 +1,5 @@
-﻿string name = "Bob";
-int messages = 3;
-decimal temperature = 34.4m;
-
-Console.Write("Hello, ");
-Console.WriteLine(name);
-Console.Write("You have ");
-Console.Write(messages);
-Console.WriteLine(" messages in your inbox.");
-Console.Write("The temperature is ");
-Console.Write(temperature);
-Console.Write(" celsius.");
+﻿Console.WriteLine("Generating invoices for customer \"Contoso Corp\" ...\n");
+Console.WriteLine("Invoice: 1021\t\tComplete!");
+Console.WriteLine("Invoice: 1022\t\tComplete!");
+Console.WriteLine("\nOutput Directory:\t");
+Console.WriteLine(@"c:\invoices");
