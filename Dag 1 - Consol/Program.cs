@@ -1,2 +1,3 @@
-﻿Console.WriteLine(true);
-Console.WriteLine(false);
+﻿string firstName;
+firstName = "Bob";
+Console.WriteLine(firstName);
