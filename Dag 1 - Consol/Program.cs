@@ -44,9 +44,14 @@
 //Console.WriteLine(value1);
 //Console.WriteLine(value2);
 
-int value = 1;
-value++;
-Console.WriteLine("First: " + value);
-Console.WriteLine($"Second: {value++}");
-Console.WriteLine("Third: " + value);
-Console.WriteLine("Fourth: " + (++value));
+//int value = 1;
+//value++;
+//Console.WriteLine("First: " + value);
+//Console.WriteLine($"Second: {value++}");
+//Console.WriteLine("Third: " + value);
+//Console.WriteLine("Fourth: " + (++value));
+
+
+int fahrenheit = 94;
+decimal celsius = (fahrenheit - 32m) * (5m / 9m);
+Console.WriteLine("Temperature is " + celsius + " degrees celsius");
