@@ -3,7 +3,6 @@
 int roll1 = dice.Next(1, 7);
 int roll2 = dice.Next(1, 7);
 int roll3 = dice.Next(1, 7);
-
 int total = roll1 + roll2 + roll3;
 
 Console.WriteLine($"DIce roll: {roll1} + {roll2} + {roll3} = {total}");
@@ -20,13 +19,19 @@ if ((roll1 == roll2) || (roll2 == roll3) || (roll1 == roll3))
     total += 2;
 }
 
-
-
-if (total >= 15)
+if (total >= 16)
 {
-    Console.WriteLine("Congratulations! You win!");
+    Console.WriteLine("Congratulations! You win a new car!");
 }
-else 
+else if (total>=10) 
 {
-    Console.WriteLine("Sorry, you lose.");
+    Console.WriteLine("Congratulations! You win a new laptop!");
+}
+else if (total == 7)
+{
+    Console.WriteLine("Congratulations! You win a vacation trip for two!");
+}
+else
+{
+    Console.WriteLine("Congratulations! You win a kitten!");
 }
