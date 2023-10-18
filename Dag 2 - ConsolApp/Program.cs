@@ -1,4 +1,4 @@
-﻿//The following code does the following:
+﻿//The code belowiu does the following:
 //    1. Converts the original string to a char array
 //    2. Reverses the order of the chars, thus reversing the sentence
 //    3. Counts every "o"
