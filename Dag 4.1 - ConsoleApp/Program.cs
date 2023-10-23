@@ -1,53 +1,31 @@
-﻿////int invoiceNumber = 1201;
-////decimal productShares = 25.4568m;
-////decimal subtotal = 2750.00m;
-////decimal taxPercentage = .15825m;
-////decimal total = 3185.19m;
+﻿const string input = "<div><h2>Widgets &trade;</h2><span>5000</span></div>";
 
-////Console.WriteLine($"Invoice Number: {invoiceNumber}");
-////Console.WriteLine($"   Shares: {productShares:N3} Product");
-////Console.WriteLine($"     Sub Total: {subtotal:C}");
-////Console.WriteLine($"           Tax: {taxPercentage:P2}");
-////Console.WriteLine($"     Total Billed: {total:C}");
+string quantity = "";
+string output = "";
 
-//string paymentId = "769C";
-//string payeeName = "Mr. Stephen Ortega";
-//string paymentAmount = "$5,000.00";
+// Your work here
 
-//var formattedLine = paymentId.PadRight(6);
-//formattedLine += payeeName.PadRight(24);
-//formattedLine += paymentAmount.PadLeft(10);
+// Extract the quantity
+int quantityStart = input.IndexOf("<span>");
+int quantityEnd = input.IndexOf("</span>");
+quantityStart += "<span>".Length; // Added length of the tag so index moves to end of the tag
+int quantityLength = quantityEnd - quantityStart;
+quantity = input.Substring(quantityStart, quantityLength); //Extracts from end of open tag to beginning of close tag
+quantity = $"Quantity: {quantity}";
 
-//Console.WriteLine("1234567890123456789012345678901234567890");
-//Console.WriteLine(formattedLine);
+// Set output to input, replacing the trademark symbol with the registered trademark symbol
+output = input.Replace("&trade;", "&reg;");
 
-string customerName = "Ms. Barros";
+// Remove the opening <div> tag
+int divStart = input.IndexOf("<div>");
+int divLength = "<div>".Length;
+output = output.Remove(divStart, divLength);
 
-string currentProduct = "Magic Yield";
-int currentShares = 2975000;
-decimal currentReturn = 0.1275m;
-decimal currentProfit = 55000000.0m;
+// Remove the closing <div> tag
+int divCloseStart = output.IndexOf("</div>");
+int divCloseLength = "</div>".Length;
+output = output.Remove(divCloseStart, divCloseLength);
+output = $"Output: {output}";
 
-string newProduct = "Glorious Future";
-decimal newReturn = 0.13125m;
-decimal newProfit = 63000000.0m;
-
-Console.WriteLine($"Dear {customerName},");
-Console.WriteLine($"As a customer of our {currentProduct} offering we are excited to tell you about a new financial product that would dramatically increase your return.\n");
-Console.WriteLine($"Currently, you own {currentShares:N} shares at a return of {currentReturn:P}.\n");
-Console.WriteLine($"Our new product, {newProduct} offers a return of {newReturn:P}.  Given your current volume, your potential profit would be {newProfit:C}.\n");
-
-Console.WriteLine("Here's a quick comparison:\n");
-
-string comparisonMessage = "";
-
-comparisonMessage = currentProduct.PadRight(20);
-comparisonMessage += String.Format("{0:P}", currentReturn).PadRight(10);
-comparisonMessage += String.Format("{0:C}", currentProfit).PadRight(20);
-
-comparisonMessage += "\n";
-comparisonMessage += newProduct.PadRight(20);
-comparisonMessage += String.Format("{0:P}", newReturn).PadRight(10);
-comparisonMessage += String.Format("{0:C}", newProfit).PadRight(20);
-
-Console.WriteLine(comparisonMessage);
+Console.WriteLine(quantity);
+Console.WriteLine(output);
